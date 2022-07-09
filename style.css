@@ -41,6 +41,13 @@ a{
     background-size: cover;
 }
 
+.grid-expcard{
+    display: grid;
+    grid-template-rows: 25% 50% auto;
+    height:100%;
+    width:100%;
+    color:#fff;
+}
 
 .grid-land{
     display:grid;
@@ -106,6 +113,10 @@ a{
     }
     .grid-land h4{
         font-size:40px;
+    }
+    #schedules .bg-dark{
+        min-height:250px;
+        text-align: center;
     }
 }
 @media screen and (max-height:600px){
