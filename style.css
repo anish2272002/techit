@@ -34,9 +34,9 @@ a{
 .cont{
     display:flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     width:100vw;
-    height:100vh;
+    height: 100vh;
     background-image: url("assets/lorenzo.jpg");
     background-size: cover;
 }
@@ -45,9 +45,10 @@ a{
 .grid-land{
     display:grid;
     color:#fff;
-    grid-template-rows: 27% 23% auto 10%;
+    grid-template-rows: 30% 23% auto 10%;
     width:100vw;
     min-height:500px;
+    margin-top: 90px;
 }
 
 .grid-card{
@@ -70,6 +71,25 @@ a{
     justify-content: center;
 }
 
+.profile-card{
+    padding: 25px 5px;
+    display:grid;
+    height:260px;
+    grid-template-rows: 70% auto 15%;
+    background-color: #fff;
+    cursor: pointer;
+}
+.profile-card:hover > h4{
+    color:#F24405;
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+.profile-card:not(hover) > h4{
+    color:#000;
+    transform: scale(1);
+    transition: transform 1s;
+}
+
 .nav-colored { background-color:#0d0d0d; }
 .nav-transparent { background-color:transparent;}
 
@@ -80,18 +100,16 @@ a{
     .nav-item{
         margin-right:10px;
     }
-    .grid-land{
-        display:grid;
-        color:#fff;
-        grid-template-rows: 20% 25% auto 10%;
-        width:100vw;
-        min-height:600px;
-    }
     .grid-land h1{
         font-size:90px;
     }
     .grid-land h4{
         font-size:40px;
+    }
+}
+@media screen and (max-height:600px){
+    .grid-land{
+        display: none;
     }
 }
 @media screen and (max-width:765px){
@@ -106,5 +124,8 @@ a{
     }
     .grid-land h4{
         font-size:25px;
+    }
+    .grid-land{
+        display: grid;
     }
 }
