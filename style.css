@@ -52,7 +52,7 @@ a{
 .grid-land{
     display:grid;
     color:#fff;
-    grid-template-rows: 28% 25% 15% 15%;
+    grid-template-rows: 28% 27% 15% 15%;
     width:100vw;
     min-height:500px;
     margin-top: 90px;
