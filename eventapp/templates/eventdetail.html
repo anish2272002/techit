@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="container" style="margin-top:120px;">
+        <h4 style="opacity: 0.8;">{{eventdetail.organizer}}</h4>
+        <h1>{{eventdetail.title}}</h1>
+        <h5>
+            FROM: {{ eventdetail.startDateTime|date:"D d M Y" }}&nbsp;{{ eventdetail.startDateTime|time:"f A" }}<br>
+            TO: {{ eventdetail.endDateTime|date:"D d M Y" }}&nbsp;{{ eventdetail.endDateTime|time:"f A" }}
+        </h5>
+        <div>
+            <img class="img-fluid my-3" src="{{ eventdetail.picture.url }}" alt="Photo"/>
+        </div>
+        <h5 style="opacity: 0.8;">{{eventdetail.description}}</h5>
+        <div class="my-3" style="font-size:1.2rem;">{{eventdetail.body|safe|linebreaks}}</div>
+        <p><a href="{% url 'event:eventdelete' pk=eventdetail.id %}"><button class="btn btn-lg btn-outline-danger">Remove Event</button></a></p>
+    </div>
+{% endblock %}

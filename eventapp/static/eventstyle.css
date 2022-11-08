@@ -1,0 +1,14 @@
+#eventschedule{
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+@media screen and (min-width:765px){
+    #eventschedule .bg-dark{
+        min-height:250px;
+        text-align: center;
+    }
+    #eventschedule:hover{
+        transform: scale(1.05);
+    }
+}

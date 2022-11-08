@@ -1,0 +1,117 @@
+.landing-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    background-image: url("/static/mainassets/lorenzo.jpg");
+    background-size: cover;
+}
+.landing-grid{
+    display:grid;
+    color:#fff;
+    grid-template-rows: 28% 27% 17% 13%;
+    width:100vw;
+    min-height:500px;
+    margin-top: 90px;
+    font-size: 50px;
+}
+
+.mission-grid-card{
+    padding-left: 1rem;
+    background-color: #fff;
+    display:grid;
+    grid-template-columns: 80% 20%;
+    box-sizing: border-box;
+    overflow:hidden;
+    min-height: 180px;
+    box-shadow: 0px 3px 20px 1px rgba(0,0,0,0.2);
+}
+
+.mission-grid-card-bubble{
+    color:#fff;
+    font-size:1.5rem;
+    background-color: #348888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.core-team-profile-card{
+    padding: 25px 5px;
+    display:grid;
+    height:260px;
+    grid-template-rows: 70% auto 15%;
+    background-color: #fff;
+    cursor: pointer;
+}
+.core-team-profile-card:hover > h4{
+    color:#F24405;
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+.core-team-profile-card:not(hover) > h4{
+    color:#000;
+    transform: scale(1);
+    transition: transform 1s;
+}
+.join-competition-grid{
+    display: grid;
+    grid-template-rows: 25% 45% auto;
+    height:100%;
+    width:100%;
+    color:#fff;
+}
+#schedule{
+    cursor: pointer;
+    transition: transform 1s;
+}
+.contact-info .fa-brands{
+    color:rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+.contact-info .fa-brands:hover{
+    color:rgba(0,0,0,1);
+}
+
+.contact-form input{
+    border:none;
+}
+.contact-form input:focus{
+    border-bottom:2px solid rgba(0,0,0,0.2);
+    border-radius: 0%;
+    outline: none !important;
+    box-shadow: none;
+}
+
+@media screen and (min-width:765px){
+    .landing-grid h1{
+        font-size:90px;
+    }
+    .landing-grid h4{
+        font-size:40px;
+    }
+    #schedule .bg-dark{
+        min-height:250px;
+        text-align: center;
+    }
+    #schedule:hover{
+        transform: scale(1.05);
+    }
+}
+@media screen and (max-height:600px){
+    .landing-grid{
+        display: none;
+    }
+}
+@media screen and (max-width:765px){
+    .landing-grid h1{
+        font-size:60px;
+    }
+    .landing-grid h4{
+        font-size:25px;
+    }
+    .landing-grid{
+        display: grid;
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,46 @@
+:root{
+    --theme-color1: #348888;
+    --theme-color2: #22BABB;
+    --theme-color3: #9EF8EE;
+    --theme-color4: #FA7F08;
+    --theme-color5: #F24405;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&family=Lobster&family=Lora&family=Merriweather&family=Montserrat&family=Open+Sans&family=Oswald&family=Roboto&display=swap');
+
+html,body{
+    margin:0%;
+    padding:0%;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    scroll-behavior: auto !important;
+}
+a{
+    text-decoration: none !important;
+    text-emphasis: none !important;
+}
+
+/* .nav-colored { background-color:#0d0d0d; }
+.nav-transparent { background-color:transparent;} */
+
+@media screen and (min-width:765px){
+    .dropdown .btn{
+        transform: translateY(9px);
+    }
+    .nav-item{
+        margin-right:10px;
+    }
+}
+@media screen and (max-width:765px){
+    #mycollapse{
+        background-color: #0d0d0d;
+    }
+    .nav-item{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:1100px) {
+    .navbar-header span{
+        display: none;
+    }
+}
