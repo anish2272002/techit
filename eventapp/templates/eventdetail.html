@@ -5,8 +5,8 @@
         <h4 style="opacity: 0.8;">{{eventdetail.organizer}}</h4>
         <h1>{{eventdetail.title}}</h1>
         <h5>
-            FROM: {{ eventdetail.startDateTime|date:"D d M Y" }}&nbsp;{{ eventdetail.startDateTime|time:"f A" }}<br>
-            TO: {{ eventdetail.endDateTime|date:"D d M Y" }}&nbsp;{{ eventdetail.endDateTime|time:"f A" }}
+            FROM: {{ eventdetail.startDate|date:"D d M Y" }}&nbsp;<br>
+            TO: {{ eventdetail.endDate|date:"D d M Y" }}&nbsp;
         </h5>
         <div>
             <img class="img-fluid my-3" src="{{ eventdetail.picture.url }}" alt="Photo"/>

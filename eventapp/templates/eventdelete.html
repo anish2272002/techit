@@ -5,8 +5,8 @@
         <h4 style="opacity: 0.8;">{{event.organizer}}</h4>
         <h1>{{event.title}}</h1>
         <h5>
-            FROM: {{ event.startDateTime|date:"D d M Y" }}&nbsp;{{ event.startDateTime|time:"f A" }}<br>
-            TO: {{ event.endDateTime|date:"D d M Y" }}&nbsp;{{ event.endDateTime|time:"f A" }}
+            FROM: {{ event.startDate|date:"D d M Y" }}&nbsp;<br>
+            TO: {{ event.endDate|date:"D d M Y" }}&nbsp;
         </h5>
     </div>
     <div class="container my-3">
