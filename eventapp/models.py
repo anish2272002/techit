@@ -4,7 +4,7 @@ from django.forms import ImageField
 
 class EventModel(models.Model):
     id=models.BigAutoField(primary_key=True)
-    eventType = models.CharField(max_length=256,choices=[('Hackathon','Hackathon'),('Workshop','Workshop')])
+    eventType = models.CharField(max_length=256,choices=[('Hackathon','Hackathon'),('Workshop','Workshop'),('Competition','Competition')])
     startDateTime = models.DateTimeField()
     endDateTime = models.DateTimeField()
     organizer = models.CharField(max_length=256)
