@@ -4,8 +4,9 @@
     <div class="landing-container p-4">
         <div class="landing-grid">
             <h1 style="font-family: 'Roboto', sans-serif;">Tech IT <span style="color:var(--theme-color3);font-size:2.8rem;">We Do IT Better</span></h1>
-            <h4 style="font-family: 'Lato', sans-serif;" class="pt-3"><span style="opacity:0.8;">Vision</span>
-                &nbsp;<b>To lead and Influence the student community locally and nationally.</b></h4>
+            <h4 style="font-family: 'Lato', sans-serif;" class="pt-3"><b>
+                "Every once in a while, a new technology, an old problem, and a big idea turn into an innovation."
+            </b></h4>
             <div style="font-family: 'Lato', sans-serif;"><b>
                 <span style="color:var(--theme-color4);">Innovate</span>
                 <span style="color:#fff">Connect</span>
@@ -17,13 +18,28 @@
 
     <div class="p-4">
         <div class="row">
-            <div class="col-lg-4" data-aos="fade-right" data-aos-easing="ease-out" data-aos-delay="300">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-easing="ease-out" data-aos-delay="300">
+                <h1>Our Vission</h1>
+                <div class="my-4" style="font-size:1.2rem;">
+                    <p>To lead and Influence the student community locally and nationally.</p>
+                    <p>To become a front-runner in preparing students to be efficient problem solvers, researchers, innovators, and entrepreneurs, and making them competent professionals.</p>                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-right" data-aos-easing="ease-out" data-aos-delay="300">
                 <h1>Our Mission</h1>
                 <div class="my-4" style="font-size:1.2rem;"> 
                     <p>To make students believe that a combination of an old problem and new technology will result in innovation.</p> 
-                    <p>To give students an opportunity to pursue problem solving as more than just a means to land a job.</p>
-                    <p>To encourage students to learn and explore technology in a collaborative manner.</p>
-                    <p>To have a great impact in enhancing student’s technical skills and developing interest in their domain.</p>
+                    <p>To give students an opportunity to pursue problem-solving as more than just a means to land a job.</p>                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4" data-aos="fade-right" data-aos-easing="ease-out" data-aos-delay="300">
+                <h1>Our Objectives</h1>
+                <div class="my-4" style="font-size:1.2rem;"> 
+                    <p>To encourage students to learn and explore technology in a collaborative manner.</p> 
+                    <p>To have a great impact on enhancing student’s technical skills and developing interest in their domain.</p>                    </p>
                 </div>
                 <button class="btn btn-lg btn-success" style="background-color:#348888;">KNOW MORE</button>
             </div>
@@ -350,8 +366,8 @@
     <div class="container my-3">
         <h3 style="opacity:0.8;">EVENT DETAILS</h3><br>
         <h6 style="opacity:0.8;">
-            World is committed to making participation in the event a harassment free experience for everyone, 
-            regardless of level of experience, gender, gender identity and expression.
+            We are committed to making participation in the events a harassment free experience for everyone, 
+            regardless of level of experience, gender identity and expression.
         </h6><br>
 
         {% for event in eventlist %}
@@ -359,8 +375,8 @@
             <div id="schedule" data-aos="zoom-out" class="row my-3 rounded align-items-center bg-white" style="min-height:250px;">
                 <div class="col-md-3 bg-dark rounded p-3 text-white">
                     <h5>
-                        FROM: {{ event.startDateTime|date:"D d M Y" }}&nbsp;{{ event.startDateTime|time:"f A" }}<br>
-                        TO: {{ event.endDateTime|date:"D d M Y" }}&nbsp;{{ event.endDateTime|time:"f A" }}
+                        FROM: {{ event.startDate|date:"D d M Y" }}&nbsp;<br>
+                        TO: {{ event.endDate|date:"D d M Y" }}&nbsp;
                     </h5>
                     <h5>{{ event.eventType }}</h5>
                 </div>
@@ -387,7 +403,7 @@
         <h5 style="opacity:0.8;">WHO HELPS US</h5>
         <h1>Our Sponsors</h1><br>
         <div class="m-2">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-3 my-5">
                         <img class="img-fluid" style="height:50px;width:auto;" src="{% static 'assets/sponsors/sponsor1.png' %}">
                     </div>
@@ -419,7 +435,7 @@
                     <div class="col-md-3 my-5">
                         <img class="img-fluid" style="height:50px;width:auto;" src="{% static 'assets/sponsors/sponsor9.png' %}">
                     </div>
-                </div>
+                </div> -->
         </div><br>
         <span id="contact"></span>
         <div class="m-3">

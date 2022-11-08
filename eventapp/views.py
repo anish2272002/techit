@@ -1,10 +1,28 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse,reverse_lazy
+
+from django.views import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import DeleteView
+
 from .models import EventModel
+from .forms import EventCreateForm
+
+class EventCreateView(View):
+    template_name = "eventcreate.html"
+    def get(self,request):
+        return render(request,self.template_name,{'form':EventCreateForm()})
+    def post(self,request):
+        form=EventCreateForm(request.POST,request.FILES)
+        if(form.is_valid()):
+            obj=form.save(commit=False)
+            obj.picture=form.cleaned_data['picture']
+            obj.save()
+            return HttpResponseRedirect(reverse("event:eventlist"))
+        else:
+            return render(request,self.template_name,{'form':form})
 
 class EventListView(ListView):
     model=EventModel

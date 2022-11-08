@@ -1,12 +1,10 @@
-from select import select
 from django.db import models
-from django.forms import ImageField
 
 class EventModel(models.Model):
     id=models.BigAutoField(primary_key=True)
-    eventType = models.CharField(max_length=256,choices=[('Hackathon','Hackathon'),('Workshop','Workshop'),('Competition','Competition')])
-    startDateTime = models.DateTimeField()
-    endDateTime = models.DateTimeField()
+    eventType = models.CharField(max_length=256,choices=[('Hackathon','Hackathon'),('Workshop','Workshop'),('Competition','Competition')],default='Hackathon')
+    startDate = models.DateField()
+    endDate = models.DateField()
     organizer = models.CharField(max_length=256)
     title = models.CharField(max_length=256)
     description = models.CharField(max_length=256)
