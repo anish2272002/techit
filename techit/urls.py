@@ -23,5 +23,6 @@ urlpatterns = [
     path('',include('mainapp.urls')),
     path('event/',include('eventapp.urls')),
     path('about/',include('aboutapp.urls')),
+    path('gallery/',include('gallery.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

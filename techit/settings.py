@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'authapp',
     'blogapp',
     'eventapp',
+    'gallery',
     'mainapp',
     'techit',
 ]
@@ -66,7 +67,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [Path.joinpath(BASE_DIR,'templates'),
                 Path.joinpath(BASE_DIR,'mainapp/templates'),
-                Path.joinpath(BASE_DIR,'eventapp/templates')],
+                Path.joinpath(BASE_DIR,'eventapp/templates'),
+                Path.joinpath(BASE_DIR,'gallery/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,7 +156,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = Path.joinpath(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [Path.joinpath(BASE_DIR,'static'),
                     Path.joinpath(BASE_DIR,'mainapp/static'),
-                    Path.joinpath(BASE_DIR,'eventapp/static')]
+                    Path.joinpath(BASE_DIR,'eventapp/static'),
+                    Path.joinpath(BASE_DIR,'gallery/static')]
 
 MEDIA_URL  = 'media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR,'media')

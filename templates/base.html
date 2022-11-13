@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'mainstyle.css' %}">
     <link rel="stylesheet" href="{% static 'eventstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'gallerystyle.css' %}">
 </head>
 <body>
 
@@ -73,7 +74,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link text-white" href="#">
+                    <li class="nav-item"><a class="nav-link text-white" href="{% url 'gallery:index' %}">
                         <button class="btn border-2 btn-outline-light w-100">GALLERY</button>
                     </a></li>
                 </ul>
@@ -98,7 +99,7 @@
             |&nbsp;<a class="text-white" href="">Blogs</a>
             |&nbsp;<a class="text-white" href="{% url 'about:contact' %}">Contact Us</a>&nbsp;
             |&nbsp;<a class="text-white" href="{% url 'event:eventlist' %}">Events</a>&nbsp;
-            |&nbsp;<a class="text-white" href="">Gallery</a>
+            |&nbsp;<a class="text-white" href="{% url 'gallery:index' %}">Gallery</a>
         </p>
         <p>© 2022 All rights reserved</p>
     </div>
@@ -114,4 +115,5 @@ crossorigin="anonymous"></script>
 <!-- Local JS -->
 <script src="{% static 'script.js' %}"></script>
 <script src="{% static 'eventscript.js' %}"></script>
+<script src="{% static 'galleryscript.js' %}"></script>
 </html>
