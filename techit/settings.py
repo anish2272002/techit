@@ -146,6 +146,11 @@ AWS_S3_REGION_NAME = 'ap-south-1'
 AWS_S3_ADDRESSING_STYLE = 'virtual'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
+#AWS Cloudfront
+CLOUDFRONT_DOMAIN = "d1bytzm4tjuw0s.cloudfront.net"
+CLOUDFRONT_ID = "E3SGB4RB5QNU2E"
+AWS_S3_CUSTOM_DOMAIN = "d1bytzm4tjuw0s.cloudfront.net"
+
 #data upload size blog body
 DATA_UPLOAD_MAX_MEMORY_SIZE=8242880
 
