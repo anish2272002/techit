@@ -3,31 +3,17 @@
     <div class="container" style="margin-top:120px;margin-bottom:20px;">
         <div style="display: flex;flex-direction:row;">
             <h3 style="opacity:0.8;">GALLERY</h3>
-            <button class="btn btn-outline-success mx-3">ADD ITEM</button>
+            <a href="{% url 'gallery:index' %}"><button class="btn btn-outline-success mx-3">ADD ITEM</button></a>
         </div>
         <div class="row">
-            {% for GalleryItem in GalleryItems %}
-                {% if GalleryItem.type == "Photo" %}
+            {% for GalleryPhoto in GalleryPhotos %}
                 <div class="col-lg-4 col-md-6 my-2 gallery-item-container">
-                    <img class="img-fluid h-100" style="object-fit:cover;" src="{{ GalleryItem.content.url }}" alt="Photo"/>
+                    <img class="img-fluid h-100 rounded" style="object-fit:cover;" src="{{ GalleryPhoto.file.url }}" alt="Photo"/>
                     <div class="gallery-item-overlay">
-                        <div class="gallery-item-caption">{{GalleryItem.caption}}</div>
+                        <div class="gallery-item-caption">{{GalleryPhoto.caption}}</div>
                     </div>
                 </div>
-                {% else %}
-                <div class="col-lg-4 col-md-6 my-2 gallery-video-container">
-                    <video class="img-fluid h-100" style="object-fit:cover;">
-                        <source src="{{ GalleryItem.content.url }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="gallery-video-overlay">
-                        <div class="gallery-video-caption"><i class="fa-solid fa-play"></i></div>
-                    </div>
-                </div>
-                {% endif %}
             {% endfor %}
-            <iframe class="col-lg-4 col-md-6 my-2" src="https://www.youtube.com/embed/Uh9643c2P6k" title="Introducing Windows 11" allowfullscreen></iframe>
-            </iframe>
         </div>
     </div>
 {% endblock %}

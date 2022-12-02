@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import GalleryIndexView
+
 app_name="gallery"
 
 urlpatterns = [

@@ -11,4 +11,4 @@ class EventModel(models.Model):
     body = models.TextField(max_length=256)
     picture = models.ImageField(upload_to='eventpic',default="../media/eventpic/icon-0.jpg",blank=True)
     def __str__(self):
-        return "{0} : {1} : {2}".format(self.startDateTime,self.eventType,self.title)
+        return "{0} : {1} : {2}".format(self.startDate,self.eventType,self.title)
