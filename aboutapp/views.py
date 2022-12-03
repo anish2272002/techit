@@ -62,3 +62,7 @@ class ContactView(View):
         }
         result = mailjet.send.create(data=data)
         return HttpResponseRedirect(reverse("main:index"))
+
+class AboutView(View):
+    def get(self,request):
+        return render(request,"about.html",{})

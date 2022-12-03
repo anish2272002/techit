@@ -10,13 +10,13 @@
         </h5>
     </div>
     <div class="container my-3">
-        <h1 style="opacity:0.6;">Remove Event</h1>
+        <h1 style="opacity:0.6;">Remove Event or Competition</h1>
         <p style="font-size:1rem;opacity:0.8;">To confirm this, type "<b>{{event.title}}</b>"</p>
         <p><form method="POST" class="row">
             {% csrf_token %}
             <p class="col-8"><input type="text" class="form-control form-control-md" name="event_title" placeholder="{{event.title}}" required></p>
             <p class="col-4"><input type="submit" class="btn btn-danger" value="Remove"></p>
         </form></p>
-        <a href="{% url 'event:eventlist' %}"><button class="btn btn-outline-warning">Cancel</button></a>
+        <a href="{% url 'event:eventdetail' pk=event.id %}"><button class="btn btn-outline-warning">Cancel</button></a>
     </div>
 {% endblock %}

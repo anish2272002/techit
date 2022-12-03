@@ -4,4 +4,4 @@ from eventapp.models import EventModel
 
 class IndexView(View):
     def get(self,request):
-        return render(request,'index.html',{'eventlist':EventModel.objects.order_by('-id')[:5]})
+        return render(request,'index.html',{'eventlist':EventModel.objects.exclude(eventType='Competition').order_by('-id')[:5]})

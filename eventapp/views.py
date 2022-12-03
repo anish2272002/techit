@@ -12,22 +12,28 @@ from .forms import EventCreateForm
 
 class EventCreateView(View):
     template_name = "eventcreate.html"
-    def get(self,request):
-        return render(request,self.template_name,{'form':EventCreateForm()})
-    def post(self,request):
+    def get(self,request,isCompetition):
+        return render(request,self.template_name,{'form':EventCreateForm(),'isCompetition':isCompetition})
+    def post(self,request,isCompetition):
         form=EventCreateForm(request.POST,request.FILES)
         if(form.is_valid()):
             obj=form.save(commit=False)
             obj.picture=form.cleaned_data['picture']
             obj.save()
-            return HttpResponseRedirect(reverse("event:eventlist"))
+            return HttpResponseRedirect(reverse("event:eventlist",kwargs={'isCompetition':isCompetition}))
         else:
             return render(request,self.template_name,{'form':form})
 
-class EventListView(ListView):
+class EventListView(View):
     model=EventModel
     template_name = "eventlist.html"
     context_object_name = "eventlist"
+    def get(self,request,isCompetition):
+        if(isCompetition==1):
+            objs=self.model.objects.filter(eventType='Competition')
+        else:
+            objs=self.model.objects.exclude(eventType='Competition')
+        return render(request,self.template_name,{self.context_object_name:objs,'isCompetition':isCompetition})
 
 class EventDetailView(DetailView):
     model=EventModel
@@ -40,9 +46,13 @@ class EventDeleteView(DeleteView):
     context_object_name="event"
     success_url=reverse_lazy("event:eventlist")
     def get(self,request,pk):
-        return render(request,self.template_name,{self.context_object_name:self.model.objects.get(id=pk)})
+        obj=self.model.objects.get(id=pk)
+        return render(request,self.template_name,{self.context_object_name:obj})
     def post(self,request,pk):
         event=get_object_or_404(self.model,id=pk)
         if(request.POST["event_title"]==event.title):
+            isCompetition = 1 if(event.eventType=='Competition') else 0
             event.delete()
-        return HttpResponseRedirect(reverse("event:eventlist"))
+            return HttpResponseRedirect(reverse("event:eventlist",kwargs={'isCompetition':isCompetition}))
+        else:
+            return HttpResponseRedirect(reverse("event:eventdetail",kwargs={'pk':event.id}))

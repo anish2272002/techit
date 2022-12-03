@@ -4,51 +4,49 @@ from .models import EventModel
 class EventCreateForm(forms.ModelForm):
     class Meta:
         model=EventModel
-        fields=("eventType","organizer","title","startDate","endDate","description","body","picture")
+        fields=("eventType","title","startDateTime","description","body","picture","duration")
         labels={
             "eventType":"",
-            "organizer":"",
-            "startDate":"Start Date ",
-            "endDate":"End Date ",
+            "startDateTime":"Start Date Time",
+            "duration":"Duration",
             "title":"",
             "description":"",
             "body":"",
-            "picture":"Upload Poster "
+            "picture":""
         }
         widgets={
             'eventType':forms.Select(attrs={
                 'class':'form-select',
-                'placeholder':'Event Type'
+                'placeholder':'Type'
             }),
-            'organizer':forms.TextInput(attrs={
+            'startDateTime':forms.DateTimeInput(format=('%j-%M-%Y %H-%i'),attrs={
+                'type': 'datetime-local',
                 'class':'form-control',
-                'placeholder':'Event Organizer'
+                'placeholder':'Start Date & Time'
             }),
-            'startDate':forms.DateInput(format=('%d-%m-%Y'),attrs={
-                'type': 'date',
-                'class':'form-control',
-                'placeholder':'Start Date'
-            }),
-            'endDate':forms.DateInput(format=('%d-%m-%Y'),attrs={
-                'type': 'date',
-                'class':'form-control ',
-                'placeholder': 'End Date'
+            'duration':forms.NumberInput(attrs={
+                'type':'range',
+                'min':'0.5',
+                'max':'48',
+                'step':'0.5',
+                'value':'1'
             }),
             'title':forms.TextInput(attrs={
                 'class':'form-control',
-                'placeholder':'Event Title'
+                'placeholder':'Title'
             }),
-            'description':forms.TextInput(attrs={
+            'description':forms.Textarea(attrs={
                 'class':'form-control',
-                'placeholder':'Description'
+                'placeholder':'Description',
+                'rows':'2'
             }),
             'picture':forms.FileInput(attrs={
                 'class':'form-control',
-                'placeholder':'Event Image'
+                'placeholder':'Image'
             }),
             'body':forms.Textarea(attrs={
                 'class':'form-control',
-                'placeholder':'Event Body',
+                'placeholder':'Body',
                 'rows':'10'
             }),
         }

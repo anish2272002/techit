@@ -54,7 +54,7 @@
                             ABOUT
                         </button>    
                         <ul class="dropdown-menu">
-                            <li><a href="#"><button class="dropdown-item">&nbsp;About Us</button></a></li>
+                            <li><a href="{% url 'about:aboutus' %}"><button class="dropdown-item">&nbsp;About Us</button></a></li>
                             <li><a href="{% url 'about:contact' %}"><button class="dropdown-item">&nbsp;Contact</button></a></li>
                             <li><a href="#"><button class="dropdown-item">&nbsp;FAQ</button></a></li>
                             <li><a href="{% url 'main:index' %}#sponsors"><button class="dropdown-item">&nbsp;Sponsors</button></a></li>
@@ -66,10 +66,9 @@
                             EVENTS
                         </button>    
                         <ul class="dropdown-menu">
-                            <li><a href="{% url 'event:eventlist' %}"><button class="dropdown-item">&nbsp;List Events</button></a></li>
-                            <li><a href="{% url 'event:eventcreate' %}"><button class="dropdown-item">&nbsp;Schedule Events</button></a></li>
-                            <li><a href="#"><button class="dropdown-item">&nbsp;List Competitions</button></a></li>
-                            <li><a href="#"><button class="dropdown-item">&nbsp;Schedule Competitions</button></a></li>
+                            <li><a href="{% url 'event:eventlist' isCompetition=0 %}"><button class="dropdown-item">&nbsp;List Events</button></a></li>
+                            <li><a href="{% url 'event:eventlist' isCompetition=1 %}"><button class="dropdown-item">&nbsp;List Competitions</button></a></li>
+                            <li><a href="{% url 'event:eventcreate' isCompetition=0 %}"><button class="dropdown-item">&nbsp;Schedule Event or Competitions</button></a></li>
                         </ul>
                     </li>
 
@@ -103,11 +102,11 @@
             <i class="fa-brands fa-twitter"></i>&nbsp;
         </h3>
         <p style="cursor:pointer;">
-            <a class="text-white" href="">About Us</a>&nbsp;
+            <a class="text-white" href="{% url 'about:aboutus' %}">About Us</a>&nbsp;
             |&nbsp;<a class="text-white" href="{% url 'main:index' %}#sponsors">Sponsors</a>&nbsp;
             |&nbsp;<a class="text-white" href="">Blogs</a>
             |&nbsp;<a class="text-white" href="{% url 'about:contact' %}">Contact Us</a>&nbsp;
-            |&nbsp;<a class="text-white" href="{% url 'event:eventlist' %}">Events</a>&nbsp;
+            |&nbsp;<a class="text-white" href="{% url 'event:eventlist' isCompetition=0 %}">Events</a>&nbsp;
             |&nbsp;<a class="text-white" href="{% url 'gallery:index' %}">Gallery</a>
         </p>
         <p>© 2022 All rights reserved</p>

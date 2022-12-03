@@ -2,32 +2,27 @@
 {% load static %}
 {% block content %}
     <div class="container" style="margin-top:120px;">
-        <h3 style="opacity:0.8;">EVENTS</h3>
-        {% for event in eventlist %}
-            <a href="{% url 'event:eventdetail' pk=event.id %}">
-            <div id="eventschedule" class="row my-3 rounded align-items-center bg-white" style="min-height:250px;">
-                <div class="col-md-3 bg-dark rounded p-3 text-white">
-                    <h5>
-                        FROM: {{ event.startDate|date:"D d M Y" }}&nbsp;<br>
-                        TO: {{ event.endDate|date:"D d M Y" }}&nbsp;
-                    </h5>
-                    <h5>{{ event.eventType }}</h5>
-                </div>
-                <div class="col-md-4 my-1">
-                    <img src="{{ event.picture.url }}" style="height:250px;" class="img-fluid">
-                </div>
-                <div class="col-md-5 p-2 text-dark" style="display:grid;grid-template-rows:15% 22% auto;min-height: 250px;">
-                    <h5 style="opacity:0.8;overflow:hidden;">{{ event.organizer }}</h5>
-                    <h2 style="overflow:hidden;">{{ event.title }}</h2>
-                    <h5 style="opacity:0.8;overflow:hidden;">
-                        {{ event.description }}
-                    </h5>
+        <h3 style="opacity:0.8;">
+            {% if isCompetition == 1 %}
+            COMPETITIONS
+            {% else %}
+            EVENTS
+            {% endif %}
+        </h3>
+        <div class="row">
+            {% for event in eventlist %}
+            <div class="col-lg-4 col-md-6">
+                <div class="rounded event-card" data-aos="zoom-in">
+                    <div style="font-weight:bold;font-size:1.2rem;overflow:hidden;">{{ event.title }}</div>
+                    <div style="font-weight:bold;opacity:0.6;"><span>{{ event.eventType }}</span>&nbsp;<span style="float:right;">{{ event.duration }}&nbsp;hr</span></div>
+                    <span style="overflow:hidden;">{{ event.description }}</span>
+                    <div><span style="font-weight:bold;opacity:0.6;">{{ event.startDateTime|date:'j M Y H:i' }}</span>&nbsp;<a href="{% url 'event:eventdetail' pk=event.id %}"><button class="btn btn-sm btn-outline-success" style="float:right;">PARTICIPATE</button></a></div>
                 </div>
             </div>
-            </a>
-        {% endfor %}
+            {% endfor %}
+        </div>
         <div class="my-4 text-center">
-            <a href="{% url 'event:eventcreate' %}"><button class="btn btn-lg btn-success">SCHEDULE EVENT</button></a>
+            <a href="{% url 'event:eventcreate' isCompetition=isCompetition %}"><button class="btn btn-lg btn-success">SCHEDULE EVENT OR COMPETITION</button></a>
         </div>
     </div>
 {% endblock %}
