@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static 'mainstyle.css' %}">
     <link rel="stylesheet" href="{% static 'eventstyle.css' %}">
     <link rel="stylesheet" href="{% static 'gallerystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'authstyle.css' %}">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6NLB4E5XC"></script>
@@ -102,10 +103,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             {% if user.is_authenticated %}
-                            <li><a href="#"><button class="dropdown-item">&nbsp;Logout</button></a></li>
+                            <li><a href="{% url 'auth:logout' %}"><button class="dropdown-item">&nbsp;Logout</button></a></li>
                             <li><a href="#"><button class="dropdown-item">&nbsp;Account</button></a></li>
                             {% else %}
-                            <li><a href="#"><button class="dropdown-item">&nbsp;Login</button></a></li>
+                            <li><a href="{% url 'auth:login' %}"><button class="dropdown-item">&nbsp;Login</button></a></li>
                             {% endif %}
                         </ul>
                     </li>
