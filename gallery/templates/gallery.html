@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+    <div class="backdrop">
+        <div class="backdrop-content rounded text-center">
+            <label for="id_file">
+                <img id="image_file" class="img-fluid rounded mb-2" style="max-width:180px;" src="{% static 'assets\logo\icon-0.jpg' %}" />
+            </label>
+            <i class="backdrop-close fa-solid fa-x"></i>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Upload" class="btn btn-success"/>
+            </form>
+        </div>
+    </div>
     <div class="container" style="margin-top:120px;margin-bottom:20px;">
         <div style="display: flex;flex-direction:row;">
             <h3 style="opacity:0.8;">GALLERY</h3>
-            <a href="{% url 'gallery:index' %}"><button class="btn btn-outline-success mx-3">ADD ITEM</button></a>
+            <button class="btn btn-outline-success mx-3" id="add-image-btn">ADD ITEM</button>
         </div>
         <div class="row">
             {% for GalleryPhoto in GalleryPhotos %}
