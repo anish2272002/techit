@@ -5,6 +5,12 @@ from django.views import View
 from mailjet_rest import Client
 import os
 
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+
+from .models import Faq
+from .forms import FaqForm
+
 class ContactView(View):
     def get(self,request):
         return HttpResponseRedirect(reverse("main:index")+"#contact")
@@ -66,3 +72,15 @@ class ContactView(View):
 class AboutView(View):
     def get(self,request):
         return render(request,"about.html",{})
+
+class FaqView(View):
+    def get(self,request):
+        return render(request,"faq.html",{'faqlist':Faq.objects.all().order_by('-id'),'form':FaqForm()})
+    @method_decorator(login_required)
+    def post(self,request):
+        form=FaqForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            return HttpResponseRedirect(reverse("about:faq"))
+        else:
+            return render(request,"faq.html",{'faqlist':Faq.objects.all().order_by('-id'),'form':form})

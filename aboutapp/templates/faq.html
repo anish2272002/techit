@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="margin-top:100px;">
+    <div class="row">
+        {% for faq in faqlist %}
+            <div class="faq-card rounded col-md-12">
+                <div class="row m-1">Q. {{faq.question}}</div>
+                <div class="row m-1">A. {{faq.answer}}</div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    {% if user.is_authenticated %}
+    <div class="my-3">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="Submit" value="Submit" class="btn btn-outline-secondary px-5">
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

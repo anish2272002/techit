@@ -1,0 +1,10 @@
+.faq-card{
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+    margin: 10px 0px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0.8;
+    font-family: Arial, Helvetica, sans-serif;
+}

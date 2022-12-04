@@ -70,7 +70,8 @@ TEMPLATES = [
                 Path.joinpath(BASE_DIR,'mainapp/templates'),
                 Path.joinpath(BASE_DIR,'eventapp/templates'),
                 Path.joinpath(BASE_DIR,'gallery/templates'),
-                Path.joinpath(BASE_DIR,'auth/templates')],
+                Path.joinpath(BASE_DIR,'auth/templates'),
+                Path.joinpath(BASE_DIR,'aboutapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -165,7 +166,8 @@ STATICFILES_DIRS = [Path.joinpath(BASE_DIR,'static'),
                     Path.joinpath(BASE_DIR,'mainapp/static'),
                     Path.joinpath(BASE_DIR,'eventapp/static'),
                     Path.joinpath(BASE_DIR,'gallery/static'),
-                    Path.joinpath(BASE_DIR,'authapp/static')]
+                    Path.joinpath(BASE_DIR,'authapp/static'),
+                    Path.joinpath(BASE_DIR,'aboutapp/static')]
 
 MEDIA_URL  = 'media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR,'media')

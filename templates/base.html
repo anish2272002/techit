@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'eventstyle.css' %}">
     <link rel="stylesheet" href="{% static 'gallerystyle.css' %}">
     <link rel="stylesheet" href="{% static 'authstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'aboutstyle.css' %}">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6NLB4E5XC"></script>
@@ -57,7 +58,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'about:aboutus' %}"><button class="dropdown-item">&nbsp;About Us</button></a></li>
                             <li><a href="{% url 'about:contact' %}"><button class="dropdown-item">&nbsp;Contact</button></a></li>
-                            <li><a href="#"><button class="dropdown-item">&nbsp;FAQ</button></a></li>
+                            <li><a href="{% url 'about:faq' %}"><button class="dropdown-item">&nbsp;FAQ</button></a></li>
                             <li><a href="{% url 'main:index' %}#sponsors"><button class="dropdown-item">&nbsp;Sponsors</button></a></li>
                         </ul>
                     </li>
@@ -75,7 +76,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item dropdown" style="cursor:pointer;">
+                    <!-- <li class="nav-item dropdown" style="cursor:pointer;">
                         <button class="btn border-2 btn-outline-light w-100 dropdown-toggle" data-bs-toggle="dropdown">
                             BLOG
                         </button>    
@@ -85,7 +86,7 @@
                             <li><a href="#"><button class="dropdown-item">&nbsp;Create Blog</button></a></li>
                             {% endif %}
                         </ul>
-                    </li>
+                    </li> -->
 
                     <li class="nav-item"><a class="nav-link text-white" href="{% url 'gallery:index' %}">
                         <button class="btn border-2 btn-outline-light w-100">GALLERY</button>
@@ -129,7 +130,7 @@
         <p style="cursor:pointer;">
             <a class="text-white" href="{% url 'about:aboutus' %}">About Us</a>&nbsp;
             |&nbsp;<a class="text-white" href="{% url 'main:index' %}#sponsors">Sponsors</a>&nbsp;
-            |&nbsp;<a class="text-white" href="">Blogs</a>
+            <!-- |&nbsp;<a class="text-white" href="">Blogs</a> -->
             |&nbsp;<a class="text-white" href="{% url 'about:contact' %}">Contact Us</a>&nbsp;
             |&nbsp;<a class="text-white" href="{% url 'event:eventlist' isCompetition=0 %}">Events</a>&nbsp;
             |&nbsp;<a class="text-white" href="{% url 'gallery:index' %}">Gallery</a>

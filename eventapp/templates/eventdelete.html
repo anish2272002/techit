@@ -1,16 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <div class="container" style="margin-top:120px;font-family: 'Lato', sans-serif;">
-        <h4 style="opacity: 0.8;">{{event.organizer}}</h4>
-        <h1>{{event.title}}</h1>
-        <h5>
-            FROM: {{ event.startDate|date:"D d M Y" }}&nbsp;<br>
-            TO: {{ event.endDate|date:"D d M Y" }}&nbsp;
-        </h5>
-    </div>
-    <div class="container my-3">
+    <div class="container" style="margin-top:120px;margin-bottom:20px;">
         <h1 style="opacity:0.6;">Remove Event or Competition</h1>
+        <h1 style="font-family: 'Lato', sans-serif;">{{event.title}}</h1>
         <p style="font-size:1rem;opacity:0.8;">To confirm this, type "<b>{{event.title}}</b>"</p>
         <p><form method="POST" class="row">
             {% csrf_token %}
