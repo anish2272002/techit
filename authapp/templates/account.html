@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="auth-container">
+        <div class="account-card rounded">
+            <div><img class="img-fluid" style="height:150px;width:150px;border-radius:200%;" src="{{account.profile.profile_pic.url}}"/></div>
+            <div style="opacity:0.7;">{{account.username}}</div>
+            <div style="opacity:0.7;">{{account.first_name}}&nbsp;{{account.last_name}}</div>
+        </div>
+    </div>
+{% endblock %}

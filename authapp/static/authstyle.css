@@ -1,8 +1,10 @@
-.login-container{
+.auth-container{
+    margin-top:100px;
     display: flex;
     height: calc( 100vh - 120px );
     justify-content: center;
     align-items: center;
+    background:url(../static/authassets/Jodhpur.jpg);
 }
 .login-card{
     text-align: center;
@@ -11,4 +13,17 @@
     padding: 12px;
     background: #fff;
     box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+}
+.account-card{
+    display: grid;
+    text-align: center;
+    grid-template-rows: 60% 20% 20%;
+    height:340px;
+    width:300px;
+    padding:15px;
+    background: #fff;
+    box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
