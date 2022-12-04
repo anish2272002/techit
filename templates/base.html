@@ -68,7 +68,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'event:eventlist' isCompetition=0 %}"><button class="dropdown-item">&nbsp;List Events</button></a></li>
                             <li><a href="{% url 'event:eventlist' isCompetition=1 %}"><button class="dropdown-item">&nbsp;List Competitions</button></a></li>
+                            {% if user.is_authenticated %}
                             <li><a href="{% url 'event:eventcreate' isCompetition=0 %}"><button class="dropdown-item">&nbsp;Schedule Event or Competitions</button></a></li>
+                            {% endif %}
                         </ul>
                     </li>
 
@@ -78,13 +80,35 @@
                         </button>    
                         <ul class="dropdown-menu">
                             <li><a href="#"><button class="dropdown-item">&nbsp;List Blog</button></a></li>
+                            {% if user.is_authenticated %}
                             <li><a href="#"><button class="dropdown-item">&nbsp;Create Blog</button></a></li>
+                            {% endif %}
                         </ul>
                     </li>
 
                     <li class="nav-item"><a class="nav-link text-white" href="{% url 'gallery:index' %}">
                         <button class="btn border-2 btn-outline-light w-100">GALLERY</button>
                     </a></li>
+
+                    <li class="nav-item dropdown" style="cursor:pointer;">
+                        <button class="btn border-2 btn-outline-light w-100 dropdown-toggle" data-bs-toggle="dropdown">
+                            {% if user.is_authenticated %}
+                            {{user.first_name}}
+                            &nbsp;<img src="{{user.profile.profile_pic.url}}" class="rounded" style="width:23px;height:23px;" alt="Profile">
+                            {% else %}
+                            User
+                            &nbsp;<img src="{% static 'assets/img6Q.png' %}" class="rounded" style="width:23px;height:23px;" alt="Profile">
+                            {% endif %}
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% if user.is_authenticated %}
+                            <li><a href="#"><button class="dropdown-item">&nbsp;Logout</button></a></li>
+                            <li><a href="#"><button class="dropdown-item">&nbsp;Account</button></a></li>
+                            {% else %}
+                            <li><a href="#"><button class="dropdown-item">&nbsp;Login</button></a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -97,7 +121,7 @@
             <a href="https://www.bnmit.org/"><img class="img-fluid" style="height:160px;" src="{% static 'assets/logo/bnmicon.png' %}"></a></p>
         <h3 style="opacity:1;cursor:pointer;">
             <i class="fa-brands fa-facebook"></i>&nbsp;
-            <i class="fa-brands fa-instagram"></i>&nbsp;
+            <a href="https://www.instagram.com/techit.at.bnmit/"><i class="fa-brands fa-instagram text-white"></i></a>&nbsp;
             <i class="fa-brands fa-linkedin"></i>&nbsp;
             <i class="fa-brands fa-twitter"></i>&nbsp;
         </h3>

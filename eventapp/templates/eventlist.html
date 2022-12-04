@@ -21,8 +21,10 @@
             </div>
             {% endfor %}
         </div>
+        {% if user.is_authenticated %}
         <div class="my-4 text-center">
             <a href="{% url 'event:eventcreate' isCompetition=isCompetition %}"><button class="btn btn-lg btn-success">SCHEDULE EVENT OR COMPETITION</button></a>
         </div>
+        {% endif %}
     </div>
 {% endblock %}

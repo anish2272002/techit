@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.list import ListView
+
 from .models import GalleryPhoto
 from .form import GalleryPhotoForm
+
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 class GalleryIndexView(View):
     model=GalleryPhoto
@@ -12,6 +17,7 @@ class GalleryIndexView(View):
     context_object_name = "GalleryPhotos"
     def get(self,request):
         return render(request,self.template_name,{'form':GalleryPhotoForm(),self.context_object_name:self.model.objects.all()})
+    @method_decorator(login_required)
     def post(self,request):
         form=GalleryPhotoForm(request.POST,request.FILES)
         if(form.is_valid()):

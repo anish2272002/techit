@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'gallery',
     'mainapp',
     'techit',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +69,8 @@ TEMPLATES = [
         'DIRS': [Path.joinpath(BASE_DIR,'templates'),
                 Path.joinpath(BASE_DIR,'mainapp/templates'),
                 Path.joinpath(BASE_DIR,'eventapp/templates'),
-                Path.joinpath(BASE_DIR,'gallery/templates')],
+                Path.joinpath(BASE_DIR,'gallery/templates'),
+                Path.joinpath(BASE_DIR,'auth/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -162,7 +164,8 @@ STATIC_ROOT = Path.joinpath(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [Path.joinpath(BASE_DIR,'static'),
                     Path.joinpath(BASE_DIR,'mainapp/static'),
                     Path.joinpath(BASE_DIR,'eventapp/static'),
-                    Path.joinpath(BASE_DIR,'gallery/static')]
+                    Path.joinpath(BASE_DIR,'gallery/static'),
+                    Path.joinpath(BASE_DIR,'authapp/static')]
 
 MEDIA_URL  = 'media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR,'media')

@@ -22,7 +22,8 @@
         <div class="row rounded my-2" style="font-family:Arial, Helvetica, sans-serif;padding: 12px 5px;letter-spacing:1.2px;background-color:white;">
                 {{eventdetail.body|safe|linebreaks|urlize}}
         </div>
-        
+        {% if user.is_authenticated %}
         <p><a href="{% url 'event:eventdelete' pk=eventdetail.id %}"><button class="btn btn-lg btn-outline-danger">Remove Event</button></a></p>
+        {% endif %}
     </div>
 {% endblock %}

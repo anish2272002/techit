@@ -10,10 +10,15 @@ from django.views.generic.edit import DeleteView
 from .models import EventModel
 from .forms import EventCreateForm
 
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+
 class EventCreateView(View):
     template_name = "eventcreate.html"
+    @method_decorator(login_required)
     def get(self,request,isCompetition):
         return render(request,self.template_name,{'form':EventCreateForm(),'isCompetition':isCompetition})
+    @method_decorator(login_required)
     def post(self,request,isCompetition):
         form=EventCreateForm(request.POST,request.FILES)
         if(form.is_valid()):
@@ -45,9 +50,11 @@ class EventDeleteView(DeleteView):
     template_name="eventdelete.html"
     context_object_name="event"
     success_url=reverse_lazy("event:eventlist")
+    @method_decorator(login_required)
     def get(self,request,pk):
         obj=self.model.objects.get(id=pk)
         return render(request,self.template_name,{self.context_object_name:obj})
+    @method_decorator(login_required)
     def post(self,request,pk):
         event=get_object_or_404(self.model,id=pk)
         if(request.POST["event_title"]==event.title):

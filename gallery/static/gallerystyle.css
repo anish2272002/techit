@@ -46,6 +46,9 @@
     min-width: 350px;
     max-width: 90vw;
 }
+.backdrop-content img{
+    cursor: pointer;
+}
 
 .backdrop-close{
     font-size:35px;
