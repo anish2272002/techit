@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="join-container">
+    <div style="min-height:calc(100vh - 100px);letter-spacing:2px;">
+        <p><h1 class="text-center">Inviting Creatives</h1></p>
+        <p><div class="text-center"><img class="img-fluid" style="width:150px;" src="{% static 'aboutassets\mail.png' %}" /></div></p>
+        <div class="container">
+            <p><h2>Dear Creative,</h2></p>
+            <div style="font-family:sans-serif;letter-spacing:2px;font-size:1.2rem;">
+                TechIT is a coding club that aims at bringing out efficient problem-solvers, researchers, 
+                    innovators and entrepreneurs.<br>
+                As members, we encourage each other to grow and innovate. As a club, we team up to recognize tech-savvy 
+                    minds and guide them towards their dream!<br>
+                Our club is filled with enthusiastic and tech-friendly tutors to guide you through the journey!<br>
+                Can't wait to have you with us.<br>
+                Cheers!!!<br>
+            </div>
+            <p style="font-family:sans-serif;font-size:1.2rem;">Mail us at <b>techitbnm@gmail.com</b></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

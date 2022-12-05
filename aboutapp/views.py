@@ -84,3 +84,8 @@ class FaqView(View):
             return HttpResponseRedirect(reverse("about:faq"))
         else:
             return render(request,"faq.html",{'faqlist':Faq.objects.all().order_by('-id'),'form':form})
+
+class JoinView(View):
+    template_name="join.html"
+    def get(self,request):
+        return render(request,self.template_name,{})
