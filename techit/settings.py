@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'mainapp',
     'techit',
     'easy_thumbnails',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
