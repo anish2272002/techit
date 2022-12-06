@@ -4,7 +4,7 @@
     height: calc( 100vh - 120px );
     justify-content: center;
     align-items: center;
-    background:url(../static/authassets/Jodhpur.jpg);
+    background:url("/static/authassets/Jodhpur.jpg");
 }
 .login-card{
     text-align: center;

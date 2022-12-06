@@ -9,13 +9,24 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .join-container{
-    display:flex;
-    margin-top:100px;
-    align-items: center;
-    justify-content: center;
-    min-height:calc(100vh - 100px);
+    position: relative;
+    margin-top:80px;
+    height:calc(100vh - 80px);
     width:100vw;
-    background: url(../static/aboutassets/Pink.jpg);
-    flex-direction: column;
-    padding:12px;
+    background-color: #000;
+}
+.video-container{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+}
+.join-content{
+    position:absolute;
+    top:10%;
+    left:5%;
+    right:5%;
+    color:white;
+    z-index: 5;
 }

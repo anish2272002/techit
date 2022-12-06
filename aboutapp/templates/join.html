@@ -2,22 +2,23 @@
 {% load static %}
 {% block content %}
 <div class="join-container">
-    <div style="min-height:calc(100vh - 100px);letter-spacing:2px;">
-        <p><h1 class="text-center">Inviting Creatives</h1></p>
-        <p><div class="text-center"><img class="img-fluid" style="width:150px;" src="{% static 'aboutassets\mail.png' %}" /></div></p>
-        <div class="container">
-            <p><h2>Dear Creative,</h2></p>
-            <div style="font-family:sans-serif;letter-spacing:2px;font-size:1.2rem;">
-                TechIT is a coding club that aims at bringing out efficient problem-solvers, researchers, 
-                    innovators and entrepreneurs.<br>
-                As members, we encourage each other to grow and innovate. As a club, we team up to recognize tech-savvy 
-                    minds and guide them towards their dream!<br>
-                Our club is filled with enthusiastic and tech-friendly tutors to guide you through the journey!<br>
-                Can't wait to have you with us.<br>
-                Cheers!!!<br>
-            </div>
-            <p style="font-family:sans-serif;font-size:1.2rem;">Mail us at <b>techitbnm@gmail.com</b></p>
-        </div>
+    <div class="video-container">
+        <video autoplay muted loop style="height:100%;width:100%;">
+            <source src="https://dbaeuaq4u8zso.cloudfront.net/video_back.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="join-content">
+        <h1>JOIN COMMUNITY</h1><br>
+        <h2 style="opacity:0.8;">Dear Creative,</h2>
+        <div style="letter-spacing: 1px;font-size:1.1rem;opacity:0.8;">
+            TechIT is a coding club that aims at bringing out efficient problem-solvers, researchers, 
+            innovators and entrepreneurs.<br>
+            Our club is filled with enthusiastic and tech-friendly tutors to guide you through the journey!
+            Can't wait to have you with us.<br>
+            Cheers!!!
+        </div><br>
+        <h4><span style="opacity:0.8;">Mail us at </span><b>techit.bnmit@gmail.com</b></h4>
     </div>
 </div>
+
 {% endblock %}

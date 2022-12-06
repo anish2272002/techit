@@ -31,6 +31,9 @@ step 2) Comment(as required by you) <br/>
         &emsp;- AWS_S3_REGION_NAME = 'ap-south-1' <br/>
         &emsp;- AWS_S3_ADDRESSING_STYLE = 'virtual' <br/>
         &emsp;- AWS_S3_SIGNATURE_VERSION = 's3v4' <br/>
+        &emsp;- CLOUDFRONT_DOMAIN = "dbaeuaq4u8zso.cloudfront.net" <br/>
+        &emsp;- CLOUDFRONT_ID = os.environ.get("aws_cloudfront_id") <br/>
+        &emsp;- AWS_S3_CUSTOM_DOMAIN = "dbaeuaq4u8zso.cloudfront.net" <br/>
         &emsp;- django_heroku.settings(locals()) <br/>
 step 3) Comment out **SECRET_KEY = 'django-insecure-g+mu#9h=anaz^#yyq#c03xqd^=6kcp@+j1=%n2px_=smy-#k1v'** <br/>
 step 4) Set **DEBUG = True** <br/>

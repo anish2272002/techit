@@ -4,7 +4,7 @@
     align-items: center;
     width:100vw;
     height: 100vh;
-    background-image: url("/static/mainassets/lorenzo.jpg");
+    background-image: url("https://dbaeuaq4u8zso.cloudfront.net/lorenzo.jpg");
     background-size: cover;
 }
 .landing-grid{

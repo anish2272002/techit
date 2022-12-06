@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"] if(DEBUG==True) else ["https://techitbnm.herokuapp.com/"]
 
@@ -151,9 +151,9 @@ AWS_S3_ADDRESSING_STYLE = 'virtual'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 #AWS Cloudfront
-# CLOUDFRONT_DOMAIN = "d1bytzm4tjuw0s.cloudfront.net"
-# CLOUDFRONT_ID = "E3SGB4RB5QNU2E"
-# AWS_S3_CUSTOM_DOMAIN = "d1bytzm4tjuw0s.cloudfront.net"
+CLOUDFRONT_DOMAIN = "dbaeuaq4u8zso.cloudfront.net"
+CLOUDFRONT_ID = os.environ.get("aws_cloudfront_id")
+AWS_S3_CUSTOM_DOMAIN = "dbaeuaq4u8zso.cloudfront.net"
 
 #data upload size blog body
 DATA_UPLOAD_MAX_MEMORY_SIZE=8242880
