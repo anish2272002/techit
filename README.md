@@ -44,8 +44,8 @@ step 6) Run <br/>
 step 7) Run <br/>
         &emsp;- windows: **python manage.py migrate** <br/>
         &emsp;- mac: **python3 manage.py migrate** <br/>
-step 6) Run <br/>
+step 8) Run <br/>
         &emsp;- windows: **python manage.py runserver** <br/>
         &emsp;- mac: **python3 manage.py runserver** <br/>
-step 7) Go to **http://127.0.0.1:8000** <br/>
-step 8) PEACE V_V <br/>
+step 9) Go to **http://127.0.0.1:8000** <br/>
+step 10) PEACE V_V <br/>
