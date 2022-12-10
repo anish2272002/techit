@@ -26,6 +26,12 @@ SECRET_KEY = os.environ.get("secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+import mimetypes
+mimetypes.add_type("image/png", ".png", True)
+mimetypes.add_type("image/jgeg", ".jpeg", True)
+mimetypes.add_type("image/jpeg", ".jpg", True)
+mimetypes.add_type("text/javascript", ".js", True)
+mimetypes.add_type("text/css", ".css", True)
 
 ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ["https://web-production-6ae1.up.railway.app"]
